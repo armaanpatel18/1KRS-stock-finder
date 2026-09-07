@@ -1,0 +1,10 @@
+{
+  "updated_at": null,
+  "currency": "INR",
+  "provider": {
+    "name": "Twelve Data",
+    "exchange": "NSE",
+    "mic_code": "XNSE"
+  },
+  "signals": []
+}
