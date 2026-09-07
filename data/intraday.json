@@ -1,0 +1,8 @@
+{
+  "updated_at": null,
+  "timezone": "Asia/Kolkata",
+  "market": "NSE",
+  "provider": "NSE chart data via stock-nse-india",
+  "interval": "5m",
+  "stocks": []
+}
