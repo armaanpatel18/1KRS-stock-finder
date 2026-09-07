@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>₹1,000 Stock Finder</title>
+<meta name="description" content="Indian stock research dashboard for a ₹1,000 portfolio budget.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">₹</span><div><b>₹1,000 Stock Finder</b><small>Indian equity research dashboard</small></div></div>
+  <div class="updated">Data updated: <span id="updatedAt">—</span></div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">VALUE • GROWTH • RISK</span>
+      <h1>Find quality stocks without chasing “cheap” stocks.</h1>
+      <p>Screen Indian equities for business quality, growth, balance-sheet strength, valuation and catalysts—then build a practical ₹1,000 watchlist.</p>
+    </div>
+    <div class="budget-card">
+      <label>Total budget</label>
+      <div class="budget-row"><span>₹</span><input id="budget" type="number" min="100" step="100" value="1000"></div>
+      <div class="muted">Adjust this to see position sizing.</div>
+    </div>
+  </section>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="toolbar">
+    <div class="tabs" id="tabs">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="undervalued">Undervalued</button>
+      <button data-filter="growth">Growth</button>
+      <button data-filter="watch">Watch</button>
+      <button data-filter="trap">Value traps</button>
+    </div>
+    <input id="search" placeholder="Search company or symbol…">
+  </section>
+
+  <section class="notice">
+    <b>Research only:</b> Scores are screening outputs, not buy/sell advice. Verify current prices, filings and corporate actions before investing.
+  </section>
+
+  <section id="stockGrid" class="grid"></section>
+
+  <section class="portfolio">
+    <div class="section-head"><div><span class="eyebrow">₹1,000 CALCULATOR</span><h2>Build a small portfolio</h2></div><div id="portfolioTotal" class="pill">₹0</div></div>
+    <div id="portfolioRows"></div>
+  </section>
+
+  <section class="method">
+    <span class="eyebrow">SCORING SYSTEM</span>
+    <h2>How the score works</h2>
+    <div class="score-grid">
+      <div><b>Business quality</b><span>20%</span><p>ROCE, margins, competitive position.</p></div>
+      <div><b>Growth</b><span>20%</span><p>Revenue and profit growth.</p></div>
+      <div><b>Financial strength</b><span>15%</span><p>Debt, cash flow and balance sheet.</p></div>
+      <div><b>Valuation</b><span>15%</span><p>Relative and historical valuation.</p></div>
+      <div><b>Moat</b><span>10%</span><p>Pricing power and barriers to entry.</p></div>
+      <div><b>Management</b><span>10%</span><p>Promoter behavior and governance.</p></div>
+      <div><b>Catalysts</b><span>5%</span><p>Potential earnings/value unlocks.</p></div>
+      <div><b>Risk</b><span>5%</span><p>Downside and thesis-break risks.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer><span>₹1,000 Stock Finder</span><span>Not investment advice • Data source attribution belongs in data/stocks.json</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
