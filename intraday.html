@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Intraday Scanner | ₹1,000 Stock Finder</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .intraday-page {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px 16px 60px;
+    }
+
+    .intraday-header {
+      margin-bottom: 24px;
+    }
+
+    .intraday-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .scanner-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .status-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      font-size: 13px;
+    }
+
+    .scanner-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .scanner-controls button {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: inherit;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .scanner-controls button.active {
+      background: #b8ff00;
+      color: #111;
+      border-color: #b8ff00;
+      font-weight: 700;
+    }
+
+    .scanner-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+    }
+
+    .scanner-table {
+      width: 100%;
+      min-width: 1050px;
+      border-collapse: collapse;
+    }
+
+    .scanner-table th,
+    .scanner-table td {
+      padding: 13px 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      white-space: nowrap;
+    }
+
+    .scanner-table th {
+      font-size: 12px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .signal {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .signal-buy {
+      background: rgba(80, 220, 120, 0.15);
+      color: #65e58a;
+    }
+
+    .signal-sell {
+      background: rgba(255, 80, 80, 0.15);
+      color: #ff7777;
+    }
+
+    .signal-watch {
+      background: rgba(255, 190, 60, 0.15);
+      color: #ffc34d;
+    }
+
+    .signal-unavailable {
+      background: rgba(150,150,150,0.15);
+      color: #aaa;
+    }
+
+    .positive {
+      color: #65e58a;
+    }
+
+    .negative {
+      color: #ff7777;
+    }
+
+    .scanner-message {
+      padding: 30px;
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    .warning-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255,190,60,0.08);
+      border: 1px solid rgba(255,190,60,0.15);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="intraday-page">
+
+    <a class="back-link" href="index.html">
+      ← Back to Stock Finder
+    </a>
+
+    <section class="intraday-header">
+
+      <h1>📊 Intraday Scanner</h1>
+
+      <p>
+        Technical scanner for NSE stocks using 5-minute chart data.
+      </p>
+
+      <div class="scanner-status">
+        <span class="status-pill">
+          Market: NSE
+        </span>
+
+        <span class="status-pill">
+          Timeframe: 5m
+        </span>
+
+        <span class="status-pill" id="updatedAt">
+          Last update: —
+        </span>
+      </div>
+
+    </section>
+
+    <section class="scanner-controls">
+
+      <button
+        class="active"
+        data-filter="ALL"
+        onclick="setFilter('ALL', this)">
+        All
+      </button>
+
+      <button
+        data-filter="BUY"
+        onclick="setFilter('BUY', this)">
+        🟢 BUY
+      </button>
+
+      <button
+        data-filter="SELL"
+        onclick="setFilter('SELL', this)">
+        🔴 SELL
+      </button>
+
+      <button
+        data-filter="WATCH"
+        onclick="setFilter('WATCH', this)">
+        🟡 WATCH
+      </button>
+
+      <button onclick="loadScanner()">
+        🔄 Refresh
+      </button>
+
+    </section>
+
+    <section class="scanner-table-wrap">
+
+      <table class="scanner-table">
+
+        <thead>
+          <tr>
+            <th>Stock</th>
+            <th>Signal</th>
+            <th>Price</th>
+            <th>EMA 20</th>
+            <th>RSI 14</th>
+            <th>VWAP</th>
+            <th>Rel. Volume</th>
+            <th>Entry</th>
+            <th>Stop Loss</th>
+            <th>Target 1</th>
+            <th>Target 2</th>
+          </tr>
+        </thead>
+
+        <tbody id="scannerBody">
+          <tr>
+            <td colspan="11" class="scanner-message">
+              Loading scanner...
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </section>
+
+    <section class="warning-box">
+
+      <strong>⚠️ Important:</strong>
+
+      This scanner is a technical decision-support tool,
+      not a guaranteed prediction or financial advice.
+
+      Data comes from an unofficial NSE data source and may
+      occasionally be delayed, incomplete or unavailable.
+
+      Always verify the live price, volume and order-book
+      conditions in your broker before placing an order.
+
+    </section>
+
+  </main>
+
+<script>
+
+let scannerData = [];
+let currentFilter = "ALL";
+
+async function loadScanner() {
+
+  const body = document.getElementById("scannerBody");
+
+  body.innerHTML = `
+    <tr>
+      <td colspan="11" class="scanner-message">
+        Loading scanner...
+      </td>
+    </tr>
+  `;
+
+  try {
+
+    const response = await fetch(
+      "data/intraday.json?t=" + Date.now()
+    );
+
+    if (!response.ok) {
+      throw new Error("Unable to load intraday.json");
+    }
+
+    const data = await response.json();
+
+    scannerData = data.stocks || [];
+
+    updateTimestamp(data.updated_at);
+
+    renderScanner();
+
+  } catch (error) {
+
+    console.error(error);
+
+    body.innerHTML = `
+      <tr>
+        <td colspan="11" class="scanner-message">
+          ❌ Scanner data unavailable.
+        </td>
+      </tr>
+    `;
+
+  }
+
+}
+
+
+function updateTimestamp(timestamp) {
+
+  const element = document.getElementById("updatedAt");
+
+  if (!timestamp) {
+
+    element.textContent = "Last update: Not available";
+
+    return;
+
+  }
+
+  const date = new Date(timestamp);
+
+  element.textContent =
+    "Last update: " +
+    date.toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata"
+    });
+
+}
+
+
+function setFilter(filter, button) {
+
+  currentFilter = filter;
+
+  document
+    .querySelectorAll(".scanner-controls button[data-filter]")
+    .forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+  renderScanner();
+
+}
+
+
+function renderScanner() {
+
+  const body = document.getElementById("scannerBody");
+
+  let rows = scannerData;
+
+  if (currentFilter !== "ALL") {
+
+    rows = scannerData.filter(
+      stock => stock.signal === currentFilter
+    );
+
+  }
+
+  if (!rows.length) {
+
+    body.innerHTML = `
+      <tr>
+        <td colspan="11" class="scanner-message">
+          No stocks found for this filter.
+        </td>
+      </tr>
+    `;
+
+    return;
+
+  }
+
+  body.innerHTML = rows.map(stock => {
+
+    const signalClass =
+      stock.signal === "BUY"
+        ? "signal-buy"
+        : stock.signal === "SELL"
+        ? "signal-sell"
+        : stock.signal === "WATCH"
+        ? "signal-watch"
+        : "signal-unavailable";
+
+    const price =
+      formatNumber(stock.price);
+
+    const ema =
+      formatNumber(stock.ema20);
+
+    const rsi =
+      formatNumber(stock.rsi14);
+
+    const vwap =
+      formatNumber(stock.vwap);
+
+    const relativeVolume =
+      stock.relative_volume != null
+        ? stock.relative_volume + "x"
+        : "—";
+
+    const entry =
+      formatNumber(stock.entry);
+
+    const stop =
+      formatNumber(stock.stop_loss);
+
+    const target1 =
+      formatNumber(stock.target_1);
+
+    const target2 =
+      formatNumber(stock.target_2);
+
+    return `
+
+      <tr>
+
+        <td>
+          <strong>${escapeHtml(stock.symbol || "—")}</strong>
+        </td>
+
+        <td>
+          <span class="signal ${signalClass}">
+            ${escapeHtml(stock.signal || "—")}
+          </span>
+        </td>
+
+        <td>
+          ₹${price}
+        </td>
+
+        <td>
+          ₹${ema}
+        </td>
+
+        <td>
+          ${rsi}
+        </td>
+
+        <td>
+          ₹${vwap}
+        </td>
+
+        <td>
+          ${relativeVolume}
+        </td>
+
+        <td>
+          ₹${entry}
+        </td>
+
+        <td class="negative">
+          ₹${stop}
+        </td>
+
+        <td class="positive">
+          ₹${target1}
+        </td>
+
+        <td class="positive">
+          ₹${target2}
+        </td>
+
+      </tr>
+
+    `;
+
+  }).join("");
+
+}
+
+
+function formatNumber(value) {
+
+  if (
+    value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+  ) {
+
+    return "—";
+
+  }
+
+  return Number(value).toFixed(2);
+
+}
+
+
+function escapeHtml(value) {
+
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+loadScanner();
+
+</script>
+
+</body>
+</html>
