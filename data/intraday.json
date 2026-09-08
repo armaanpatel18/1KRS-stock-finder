@@ -1,0 +1,121 @@
+{
+  "updated_at": "2026-09-08T03:07:45.544Z",
+  "timezone": "Asia/Kolkata",
+  "market": "NSE",
+  "provider": "NSE chart data via stock-nse-india",
+  "interval": "5m + 15m confirmation",
+  "signal_session": "09:15-15:15 IST",
+  "methodology": {
+    "ema": "EMA20 on 5m candles",
+    "rsi": "RSI14 on 5m candles",
+    "vwap": "Session VWAP on 5m candles",
+    "relative_volume": "Latest valid 5m volume divided by average previous 20 valid 5m volumes",
+    "trend_confirmation": "15m close compared with 15m EMA20",
+    "buy": "Price > EMA20 and VWAP + RSI 52-70 + relative volume >= 1.2x + near recent high + 15m bullish",
+    "sell": "Price < EMA20 and VWAP + RSI 30-48 + relative volume >= 1.2x + near recent low + 15m bearish",
+    "risk": "Stop 0.4%, Target 1 0.4%, Target 2 0.8%"
+  },
+  "data_quality": "IST session filtering, actual-LTP extraction, chart/LTP cross-check and volume validation enabled.",
+  "stocks": [
+    {
+      "symbol": "TCS",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "INFY",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "SBIN",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "ITC",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "BEL",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "LT",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "MARUTI",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "RELIANCE",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "AXISBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "TITAN",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "M&M",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "NTPC",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "POWERGRID",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "COALINDIA",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    }
+  ]
+}
