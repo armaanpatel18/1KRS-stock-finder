@@ -1,0 +1,20 @@
+{
+  "updated_at": null,
+  "timezone": "Asia/Kolkata",
+  "market": "NSE",
+  "provider": "NSE chart data via stock-nse-india",
+  "interval": "5m + 15m confirmation",
+  "signal_session": "09:15-15:15 IST",
+  "methodology": {
+    "ema": "EMA20 on 5m candles",
+    "rsi": "RSI14 on 5m candles",
+    "vwap": "Session VWAP on 5m candles",
+    "relative_volume": "Latest valid 5m volume divided by average previous 20 valid 5m volumes",
+    "trend_confirmation": "15m close compared with 15m EMA20",
+    "buy": "Price > EMA20 and VWAP + RSI 52-70 + relative volume >= 1.2x + near recent high + 15m bullish",
+    "sell": "Price < EMA20 and VWAP + RSI 30-48 + relative volume >= 1.2x + near recent low + 15m bearish",
+    "risk": "Stop 0.4%, Target 1 0.4%, Target 2 0.8%"
+  },
+  "data_quality": "IST session filtering, actual-LTP extraction, chart/LTP cross-check and volume validation enabled.",
+  "stocks": []
+}
