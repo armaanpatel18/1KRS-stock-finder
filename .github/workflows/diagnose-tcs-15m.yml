@@ -1,0 +1,26 @@
+name: Diagnose TCS 15m
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install package
+        run: npm install stock-nse-india
+
+      - name: Run diagnostic
+        run: node scripts/diagnose_tcs_15m.js
