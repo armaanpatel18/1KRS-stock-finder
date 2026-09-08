@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T04:54:22.365Z",
+  "updated_at": "2026-09-08T05:08:28.343Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -362,7 +362,7 @@
     {
       "symbol": "POWERGRID",
       "signal": "WAIT",
-      "reason": "Building 5m intraday history (7/25 candles)",
+      "reason": "Building 5m intraday history (0/25 candles)",
       "price": 265.65,
       "quote_price": 265.65,
       "ema20": null,
