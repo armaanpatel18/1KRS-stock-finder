@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T05:57:19.070Z",
+  "updated_at": "2026-09-08T06:10:18.103Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -20,7 +20,7 @@
     {
       "symbol": "TCS",
       "signal": "WAIT",
-      "reason": "Building 5m intraday history (0/25 candles)",
+      "reason": "Building 5m intraday history (7/25 candles)",
       "price": 2270,
       "quote_price": 2270,
       "ema20": null,
@@ -58,7 +58,7 @@
     {
       "symbol": "HDFCBANK",
       "signal": "WAIT",
-      "reason": "Building 5m intraday history (7/25 candles)",
+      "reason": "Building 5m intraday history (0/25 candles)",
       "price": 707.1,
       "quote_price": 707.1,
       "ema20": null,
