@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T05:40:47.074Z",
+  "updated_at": "2026-09-08T05:51:38.265Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -21,8 +21,8 @@
       "symbol": "TCS",
       "signal": "WAIT",
       "reason": "Building 5m intraday history (7/25 candles)",
-      "price": null,
-      "quote_price": null,
+      "price": 2270,
+      "quote_price": 2270,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
