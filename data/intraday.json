@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T06:26:26.878Z",
+  "updated_at": "2026-09-08T06:32:28.680Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE intraday + chart data via stock-nse-india",
@@ -13,8 +13,8 @@
     "total": 20,
     "buy": 0,
     "sell": 0,
-    "wait": 20,
-    "unavailable": 0
+    "wait": 19,
+    "unavailable": 1
   },
   "data_quality": "Intraday grapthData is used for validated price/time. Chart OHLCV is used for EMA20, RSI14, VWAP and relative volume. IST session filtering and chart/LTP validation enabled.",
   "disclaimer": "Educational decision-support only. Intraday signals can be delayed or wrong. Verify price, liquidity, volume and risk with your broker before trading.",
@@ -61,15 +61,15 @@
     },
     {
       "symbol": "HDFCBANK",
-      "signal": "WAIT",
-      "reason": "Building 5m intraday history (0/25 candles)",
-      "price": 710.5,
-      "quote_price": 710.5,
+      "signal": "UNAVAILABLE",
+      "reason": "No valid NSE intraday price",
+      "price": null,
+      "quote_price": null,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
       "relative_volume": null,
-      "trend_15m": "BUILDING",
+      "trend_15m": "UNAVAILABLE",
       "recent_high": null,
       "recent_low": null,
       "entry": null,
@@ -77,7 +77,7 @@
       "target_1": null,
       "target_2": null,
       "volume_confirmed": false,
-      "intraday_points": 76
+      "intraday_points": 0
     },
     {
       "symbol": "ICICIBANK",
