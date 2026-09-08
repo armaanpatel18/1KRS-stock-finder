@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T06:43:12.840Z",
+  "updated_at": "2026-09-08T06:56:19.202Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -9,15 +9,15 @@
   "stocks": [
     {
       "symbol": "TCS",
-      "signal": "UNAVAILABLE",
-      "reason": "NSE data retrieval failed",
-      "price": null,
-      "quote_price": null,
+      "signal": "WAIT",
+      "reason": "No current-session 5m candles yet",
+      "price": 2270,
+      "quote_price": 2270,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
       "relative_volume": null,
-      "trend_15m": "UNKNOWN",
+      "trend_15m": "BUILDING",
       "recent_high": null,
       "recent_low": null,
       "entry": null,
