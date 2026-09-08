@@ -1,5 +1,5 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-09-08T03:26:03.268Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -16,5 +16,106 @@
     "risk": "Stop 0.4%, Target 1 0.4%, Target 2 0.8%"
   },
   "data_quality": "IST session filtering, actual-LTP extraction, chart/LTP cross-check and volume validation enabled.",
-  "stocks": []
+  "stocks": [
+    {
+      "symbol": "TCS",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "INFY",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "SBIN",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "ITC",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "BEL",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "LT",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "MARUTI",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "RELIANCE",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "AXISBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "TITAN",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "M&M",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "NTPC",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "POWERGRID",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    },
+    {
+      "symbol": "COALINDIA",
+      "signal": "UNAVAILABLE",
+      "reason": "Not enough 5m candles"
+    }
+  ]
 }
