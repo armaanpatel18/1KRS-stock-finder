@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T05:39:45.389Z",
+  "updated_at": "2026-09-10T05:53:42.902Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -46,8 +46,8 @@
       "symbol": "INFY",
       "signal": "WAIT",
       "reason": "Waiting for today's 15m intraday data",
-      "price": null,
-      "quote_price": null,
+      "price": 1035,
+      "quote_price": 1035,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
