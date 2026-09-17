@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T05:08:50.794Z",
+  "updated_at": "2026-09-17T05:26:48.197Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -358,8 +358,8 @@
       "symbol": "AXISBANK",
       "signal": "WAIT",
       "reason": "Waiting for today's 15m intraday data",
-      "price": 1241,
-      "quote_price": 1241,
+      "price": null,
+      "quote_price": null,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
