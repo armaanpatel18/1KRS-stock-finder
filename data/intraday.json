@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T04:40:37.204Z",
+  "updated_at": "2026-09-22T04:53:07.980Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -98,8 +98,8 @@
       "symbol": "ICICIBANK",
       "signal": "WAIT",
       "reason": "Waiting for today's 15m intraday data",
-      "price": null,
-      "quote_price": null,
+      "price": 1345,
+      "quote_price": 1345,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
