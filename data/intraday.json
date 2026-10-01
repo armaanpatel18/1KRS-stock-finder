@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T07:55:51.785Z",
+  "updated_at": "2026-10-01T08:11:12.426Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -384,8 +384,8 @@
       "symbol": "KOTAKBANK",
       "signal": "WAIT",
       "reason": "Waiting for today's 15m intraday data",
-      "price": 417,
-      "quote_price": 417,
+      "price": null,
+      "quote_price": null,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
