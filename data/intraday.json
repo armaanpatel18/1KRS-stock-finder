@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T07:57:08.759Z",
+  "updated_at": "2026-10-02T08:10:42.843Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -332,8 +332,8 @@
       "symbol": "BHARTIARTL",
       "signal": "WAIT",
       "reason": "Waiting for today's 15m intraday data",
-      "price": null,
-      "quote_price": null,
+      "price": 1741.1,
+      "quote_price": 1741.1,
       "ema20": null,
       "rsi14": null,
       "vwap": null,
