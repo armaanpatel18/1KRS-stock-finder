@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T11:40:47.150Z",
+  "updated_at": "2026-11-24T13:12:54.596Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -19,7 +19,7 @@
     {
       "symbol": "TCS",
       "signal": "UNAVAILABLE",
-      "reason": "No 15m chart data returned",
+      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
       "price": null,
       "quote_price": null,
       "ema20": null,
@@ -149,7 +149,7 @@
     {
       "symbol": "ITC",
       "signal": "UNAVAILABLE",
-      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
+      "reason": "No 15m chart data returned",
       "price": null,
       "quote_price": null,
       "ema20": null,
@@ -305,7 +305,7 @@
     {
       "symbol": "RELIANCE",
       "signal": "UNAVAILABLE",
-      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
+      "reason": "No 15m chart data returned",
       "price": null,
       "quote_price": null,
       "ema20": null,
@@ -331,7 +331,7 @@
     {
       "symbol": "BHARTIARTL",
       "signal": "UNAVAILABLE",
-      "reason": "No 15m chart data returned",
+      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
       "price": null,
       "quote_price": null,
       "ema20": null,
