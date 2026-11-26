@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T12:00:40.381Z",
+  "updated_at": "2026-11-26T11:49:08.405Z",
   "timezone": "Asia/Kolkata",
   "market": "NSE",
   "provider": "NSE chart data via stock-nse-india",
@@ -19,7 +19,7 @@
     {
       "symbol": "TCS",
       "signal": "UNAVAILABLE",
-      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
+      "reason": "No 15m chart data returned",
       "price": null,
       "quote_price": null,
       "ema20": null,
@@ -175,7 +175,7 @@
     {
       "symbol": "BEL",
       "signal": "UNAVAILABLE",
-      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
+      "reason": "No 15m chart data returned",
       "price": null,
       "quote_price": null,
       "ema20": null,
@@ -435,7 +435,7 @@
     {
       "symbol": "M&M",
       "signal": "UNAVAILABLE",
-      "reason": "No 15m chart data returned",
+      "reason": "Request failed with status code 403 (https://www.nseindia.com/)",
       "price": null,
       "quote_price": null,
       "ema20": null,
